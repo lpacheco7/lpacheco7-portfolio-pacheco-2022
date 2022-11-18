@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//codigo FATTOR PACHECO
+//codigo PACHECO
 
 char nombre[20];
 

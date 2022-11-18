@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #define DEFAULT 0
 #define MAYOR_DE_EDAD 1
@@ -39,7 +40,7 @@ void pedirDatos(){
     cout << "Ingrese su edad: ";
     cin >> DatosAPedir.edad;
     
-    cout << "Ingrese su numero: 0348";
+    cout << "Ingrese su numero: +54 0348 ";
     cin >> DatosAPedir.numero;
     
     verificar(DatosAPedir);
@@ -52,7 +53,7 @@ void verificar(datos DatosAPedir){
     switch (estado) {
         case DEFAULT: 
         if(stoi(DatosAPedir.edad) >= 18){
-            estado = 1;
+            estado = MAYOR_DE_EDAD;
         }
         else {
             cout << "Este servicio es para mayores de edad" << endl;
@@ -61,16 +62,19 @@ void verificar(datos DatosAPedir){
         
         case MAYOR_DE_EDAD:
         if(DatosAPedir.numero.length() == 7){
-            estado = 2;
+            estado = NUM_CORRECTO;
         }
         else{
             cout << "Este numero no es valido" << endl;
             break;
         }
         
-        
         case NUM_CORRECTO:
-        cout << "esta bien" << endl;
+        cout << "Los datos ingresados se guardaron" << endl;
+        
+        ofstream tusDatos ("datos_ingresados.txt");
+        tusDatos << "Nombre: " + DatosAPedir.nombre+ "\n" + "Edad: " + DatosAPedir.edad + "\n" + "Numero de telefono: +54 0348 " + DatosAPedir.numero + "\n";
+        
         break;
     }
 }

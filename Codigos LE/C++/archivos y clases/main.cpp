@@ -40,7 +40,7 @@ void pedirDatos(){
     cout << "Ingrese su edad: ";
     cin >> DatosAPedir.edad;
     
-    cout << "Ingrese su numero: +54 0348 ";
+    cout << "Ingrese su numero: 0348 ";
     cin >> DatosAPedir.numero;
     
     verificar(DatosAPedir);
@@ -73,7 +73,7 @@ void verificar(datos DatosAPedir){
         cout << "Los datos ingresados se guardaron" << endl;
         
         ofstream tusDatos ("datos_ingresados.txt");
-        tusDatos << "Nombre: " + DatosAPedir.nombre+ "\n" + "Edad: " + DatosAPedir.edad + "\n" + "Numero de telefono: +54 0348 " + DatosAPedir.numero + "\n";
+        tusDatos << "Nombre: " + DatosAPedir.nombre+ "\n" + "Edad: " + DatosAPedir.edad + "\n" + "Numero de telefono: 0348 " + DatosAPedir.numero + "\n";
         
         break;
     }
